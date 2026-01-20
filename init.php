@@ -167,7 +167,7 @@ class Vf_Scored extends Plugin implements IVirtualFeed {
 			"",                      // last updated
 			$search_words,           // search words array
 			0,                       // first_id
-			false,                   // vfeed enabled
+			true,                    // vfeed enabled (show feed source column)
 			""                       // query error override
 		];
 	}
