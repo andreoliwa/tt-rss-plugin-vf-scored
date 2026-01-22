@@ -83,7 +83,8 @@ class Vf_Scored extends Plugin implements IVirtualFeed {
 
 		$limit = (int)($options["limit"] ?? 30);
 		$offset = (int)($options["offset"] ?? 0);
-		$owner_uid = (int)$options["owner_uid"];
+		// Fallback to $_SESSION['uid'] if owner_uid is not provided (e.g., from API calls)
+		$owner_uid = (int)($options["owner_uid"] ?? $_SESSION['uid']);
 		$search = $options["search"] ?? "";
 		$view_mode = $options["view_mode"] ?? "";
 
